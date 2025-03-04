@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 01:24:35 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 01:24:35 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/14 01:24:35 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/02/28 15:34:04 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	stack_sorted(t_stack *stack)
 	return (1);
 }
 
-t_stack *find_min(t_stack *stack)
+t_stack	*find_min(t_stack *stack)
 {
 	long	min;
 	t_stack	*min_node;
@@ -45,17 +45,15 @@ t_stack *find_min(t_stack *stack)
 	return (min_node);
 }
 
-t_stack *find_max(t_stack *stack)
+t_stack	*find_max(t_stack *stack)
 {
-	long max;
-	t_stack *max_node;
+	long	max;
+	t_stack	*max_node;
 
 	if (!stack)
 		return (NULL);
-
-	max = stack->content;  // Initialize max with the first node's content value
+	max = stack->content;
 	max_node = stack;
-
 	while (stack)
 	{
 		if (stack->content > max)
@@ -77,16 +75,16 @@ t_stack	*find_last(t_stack *stack)
 	return (stack);
 }
 
-int	stack_len(t_stack *stack) //Define a function that calculates and returns the length of a stack
+int	stack_len(t_stack *stack)
 {
-	int	count; //To store the node count
+	int	count;
 
 	if (!stack)
 		return (0);
 	count = 0;
-	while (stack) //Loop until the end of the stack is reached
+	while (stack)
 	{
-		stack = stack->next; //Move to the next node
+		stack = stack->next;
 		count++;
 	}
 	return (count);

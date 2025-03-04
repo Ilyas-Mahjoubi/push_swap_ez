@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:00:00 by user              #+#    #+#             */
-/*   Updated: 2025/03/03 23:30:47 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:33:17 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	operations(char *str, t_stack **a, t_stack **b)
 	else if (ft_strcmp(str, "rrr\n") == 0)
 		rrr(a, b, 1);
 	else if (ft_strcmp(str, "pa\n") == 0)
-			pa(a, b, 1);
+		pa(a, b, 1);
 	else if (ft_strcmp(str, "pb\n") == 0)
 		pb(b, a, 1);
 	else
@@ -51,6 +51,7 @@ int	output(t_stack *a, t_stack *b)
 	free_stack(&b);
 	return (0);
 }
+
 static void	init_from_split(t_stack **a, char **av)
 {
 	int		i;
@@ -74,6 +75,7 @@ static void	init_from_split(t_stack **a, char **av)
 	init_stack_a(a, args, 1);
 	free_args(args, i);
 }
+
 int	process_operations(t_stack **a, t_stack **b)
 {
 	char	*line;
@@ -111,4 +113,3 @@ int	main(int argc, char **argv)
 		return (1);
 	return (output(a, b));
 }
-

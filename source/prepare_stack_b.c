@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 02:19:25 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 02:19:25 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/14 02:19:25 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/02/24 12:11:39 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	find_target_in_a(t_stack *a, t_stack *b)
 	{
 		closest_bigger = LONG_MAX;
 		a_iter = a;
-		while (a_iter) // Find closest bigger number in A
+		while (a_iter)
 		{
 			if (a_iter->content > b->content
 				&& a_iter->content < closest_bigger)
@@ -32,7 +32,6 @@ void	find_target_in_a(t_stack *a, t_stack *b)
 			}
 			a_iter = a_iter->next;
 		}
-		// If no bigger number found, target is the smallest number in A
 		if (closest_bigger == LONG_MAX)
 			b->target_node = find_min(a);
 		else

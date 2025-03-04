@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 02:08:56 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 02:08:56 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/14 02:08:56 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/02/24 11:55:58 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	set_index(t_stack *stack)
 	while (stack)
 	{
 		stack->index = i;
-		stack->above_median = (i <= mid);  // 1 if above or at median, 0 if below
+		stack->above_median = (i <= mid);
 		stack = stack->next;
 		i++;
 	}
@@ -38,7 +38,6 @@ void	find_target_in_b(t_stack *a, t_stack *b)
 	{
 		closest_smaller = LONG_MIN;
 		b_iter = b;
-		// Find closest smaller number in B
 		while (b_iter)
 		{
 			if (b_iter->content < a->content
@@ -49,7 +48,7 @@ void	find_target_in_b(t_stack *a, t_stack *b)
 			}
 			b_iter = b_iter->next;
 		}
-		if (closest_smaller == LONG_MIN) // If no smaller number found, target is the biggest number in B
+		if (closest_smaller == LONG_MIN)
 			a->target_node = find_max(b);
 		else
 			a->target_node = target;
@@ -66,12 +65,10 @@ void	calculate_cost(t_stack *a, t_stack *b)
 	len_b = stack_len(b);
 	while (a)
 	{
-		// Cost to move A to top
 		if (a->above_median)
 			a->push_cost = a->index;
 		else
 			a->push_cost = len_a - a->index;
-		// Add cost to move B target to top
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
 		else

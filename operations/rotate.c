@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 01:19:26 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 01:19:26 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/22 01:19:26 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/03/02 04:55:19 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../source/push_swap.h"
 
-static void rotate(t_stack **stack)
+static void	rotate(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
-	// Store the first and last nodes
+		return ;
 	first = *stack;
 	last = find_last(*stack);
-	// Move second node to front
 	*stack = first->next;
 	(*stack)->prev = NULL;
-	// Move first node to back
 	last->next = first;
 	first->prev = last;
 	first->next = NULL;
@@ -45,10 +42,10 @@ void	rb(t_stack **b, int flag)
 		ft_printf("rb\n");
 }
 
-void rr(t_stack **a, t_stack **b, int flag)
+void	rr(t_stack **a, t_stack **b, int flag)
 {
-    rotate(a);
-    rotate(b);
-    if (flag == 0)
-        ft_printf("rr\n");
+	rotate(a);
+	rotate(b);
+	if (flag == 0)
+		ft_printf("rr\n");
 }

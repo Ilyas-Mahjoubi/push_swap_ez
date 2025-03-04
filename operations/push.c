@@ -6,27 +6,24 @@
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 00:49:56 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 00:49:56 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:05:55 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../source/push_swap.h"
 
-static void push(t_stack **dst, t_stack**src)
+static void	push(t_stack **dst, t_stack**src)
 {
-	// If source stack is empty, nothing to push
+	t_stack	*node;
+
+	node = *src;
 	if (!*src)
 		return ;
-	// Save the node we want to push
-	t_stack *node = *src;
-	// Remove node from source stack
 	*src = node->next;
 	if (*src)
 		(*src)->prev = NULL;
-	// Connect node to destination stack
 	node->next = *dst;
 	node->prev = NULL;
-	// Update destination stack
 	if (*dst)
 		(*dst)->prev = node;
 	*dst = node;

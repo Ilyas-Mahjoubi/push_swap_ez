@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 20:23:57 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/23 20:23:57 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/14 20:23:57 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/03/02 18:55:03 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_arguments(t_stack **a, int argc, char **argv, char ***args)
+static int	parse_arguments(t_stack **a, int argc, char **argv, char ***args)
 {
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
@@ -28,7 +28,7 @@ int	parse_arguments(t_stack **a, int argc, char **argv, char ***args)
 	return (0);
 }
 
-int	execute_sort(t_stack **a, t_stack **b)
+static int	execute_sort(t_stack **a, t_stack **b)
 {
 	if (!stack_sorted(*a))
 	{
@@ -37,7 +37,7 @@ int	execute_sort(t_stack **a, t_stack **b)
 		else if (stack_len(*a) == 3)
 			sort_three(a);
 		else
-			sort_stacks(a, b);
+			turk_algo(a, b);
 	}
 	return (0);
 }
@@ -62,7 +62,6 @@ int	main(int argc, char **argv)
 			free(args[i++]);
 		free(args);
 	}
-	//print_stack(a);
 	free_stack(&a);
 	return (0);
 }

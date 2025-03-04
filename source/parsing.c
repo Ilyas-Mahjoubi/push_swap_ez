@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 23:23:10 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/23 23:23:10 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/14 23:23:10 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/03/02 14:44:18 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,13 @@ int	duplicates(t_stack *a, int n)
 	}
 	return (0);
 }
+/*
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_printf("%d ", stack->content);
+		stack = stack->next;
+	}
+	ft_printf("\n");
+} */

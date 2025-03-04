@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:07:02 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/03/01 18:09:58 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:33:54 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_tolower(int c);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isalnum(int c);
-long		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(char *src);

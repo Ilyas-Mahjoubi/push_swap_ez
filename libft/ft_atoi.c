@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:34:34 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/03/01 18:09:39 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:33:38 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long	ft_atoi(const char *str)
 {
 	long	res;
-	int	sgin;
-	int	i;
+	int		sgin;
+	int		i;
 
 	res = 0;
 	sgin = 1;

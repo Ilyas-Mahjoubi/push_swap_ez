@@ -5,33 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilmahjou <ilmahjou@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 01:17:06 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/02/24 01:17:06 by ilmahjou         ###   ########.fr       */
+/*   Created: 2025/02/15 01:17:06 by ilmahjou          #+#    #+#             */
+/*   Updated: 2025/02/27 10:05:11 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../source/push_swap.h"
 
-static void swap(t_stack **head)
+static void	swap(t_stack **head)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!*head || !(*head)->next)
-		return;
-
+		return ;
 	first = *head;
 	second = (*head)->next;
-	// Update first node connections
 	first->next = second->next;
 	first->prev = second;
-	// Update second node connections
 	second->next = first;
 	second->prev = NULL;
-	// Update next node's prev pointer if it exists
 	if (first->next)
 		first->next->prev = first;
-	// Update head to point to new first node
 	*head = second;
 }
 
