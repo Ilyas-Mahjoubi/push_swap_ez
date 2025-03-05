@@ -6,7 +6,7 @@
 #    By: ilmahjou <ilmahjou@student.42firenze.it>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 02:29:03 by ilmahjou          #+#    #+#              #
-#    Updated: 2025/02/24 02:29:03 by ilmahjou         ###   ########.fr        #
+#    Updated: 2025/03/05 12:01:44 by ilmahjou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,11 +65,11 @@ BONUS_OBJECTS = $(patsubst $(BONUSDIR)/%.c,$(OBJ_BONUS_DIR)/%.o,$(filter $(BONUS
 
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
-BLUE = \033[0;34m
+PINK = \033[4;35m
 RESET = \033[0m
 
 define print_progress
-	@echo "$(BLUE)$1...$(RESET)"
+	@echo "$(PINK)$1...$(RESET)"
 endef
 
 all: $(NAME)

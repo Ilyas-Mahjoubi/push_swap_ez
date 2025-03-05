@@ -40,9 +40,32 @@ void	find_target_in_a(t_stack *a, t_stack *b)
 	}
 }
 
+static void	calculate_cost_b(t_stack *a, t_stack *b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (b)
+	{
+		if (b->above_median)
+			b->push_cost = b->index;
+		else
+			b->push_cost = len_b - b->index;
+		if (b->target_node->above_median)
+			b->push_cost += b->target_node->index;
+		else
+			b->push_cost += len_a - b->target_node->index;
+		b = b->next;
+	}
+}
+
 void	prepare_stack_b(t_stack *a, t_stack *b)
 {
 	set_index(a);
 	set_index(b);
 	find_target_in_a(a, b);
+	calculate_cost_b(a, b);
+	mark_cheapest_node(b);
 }
